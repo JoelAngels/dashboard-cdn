@@ -1,20 +1,21 @@
+"use client";
 // import Link from "next/link";
-import {
-  Activity,
-  ArrowUpRight,
-  CreditCard,
-  DollarSign,
-  Users,
-} from "lucide-react";
+// import {
+//   Activity,
+//   ArrowUpRight,
+//   CreditCard,
+//   DollarSign,
+//   Users,
+// } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+// import { Button } from "@/components/ui/button";
+// import {
+//   Card,
+//   CardContent,
+//   CardDescription,
+//   CardHeader,
+//   CardTitle,
+// } from "@/components/ui/card";
 // import {
 //   DropdownMenu,
 //   DropdownMenuContent,
@@ -27,11 +28,17 @@ import {
 // import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Ticket, Mail, FileText, Link } from "lucide-react";
 import { ActionCard } from "../components/ActionCard";
+import { useState } from "react";
 
 export const description =
   "An application shell with a header and main content area. The header has a navbar, a search input and and a user nav dropdown. The user nav is toggled by a button with an avatar image.";
 
 export default function Cardss() {
+  const [selectedCard, setSelectedCard] = useState<string | null>(null);
+
+  const handleCardSelect = (title: string) => {
+    setSelectedCard(selectedCard === title ? null : title);
+  };
   return (
     <div className="flex w-full flex-col">
       <main className="flex flex-col gap-4 p-4 md:gap-8">
@@ -39,19 +46,26 @@ export default function Cardss() {
           <ActionCard
             title="Set up your link in bio"
             icon={<Link href="" className="h-5 w-5" />}
+            isSelected={selectedCard === "Set up your link in bio"}
+            onSelect={handleCardSelect}
           />
           <ActionCard
             title="Create a media kit"
             icon={<Ticket className="h-5 w-5" />}
-            isHighlighted={true}
+            isSelected={selectedCard === "Create a media kit"}
+            onSelect={handleCardSelect}
           />
           <ActionCard
             title="Send an email"
             icon={<Mail className="h-5 w-5" />}
+            isSelected={selectedCard === "Send an email"}
+            onSelect={handleCardSelect}
           />
           <ActionCard
             title="Generate an invoice"
             icon={<FileText className="h-5 w-5" />}
+            isSelected={selectedCard === "Generate an invoice"}
+            onSelect={handleCardSelect}
           />
         </div>
       </main>

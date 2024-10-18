@@ -3,31 +3,35 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 interface ActionCardProps {
   title: string;
   icon: React.ReactNode;
-  isHighlighted?: boolean;
+  onSelect: (title: string) => void;
+  isSelected: boolean;
 }
 
 export function ActionCard({
   title,
   icon,
-  isHighlighted = false,
+  onSelect,
+  isSelected,
 }: ActionCardProps) {
   return (
     <Card
       className={`p-4 w-full transition-all duration-300 hover:shadow-lg ${
-        isHighlighted
-          ? "bg-green-500 text-white hover:bg-green-600"
-          : "hover:bg-gray-50"
+        isSelected ? "bg-green-500 text-white" : "hover:bg-gray-50"
       }`}
+      onClick={() => onSelect(title)}
     >
       <CardHeader className="flex flex-row items-center space-y-0 pb-2">
         <div
           className={`mr-4 p-2 rounded-full ${
-            isHighlighted ? "bg-green-400" : "bg-gray-100"
-          }`}
+            isSelected ? "bg-green-400" : "bg-gray-100"
+          }
+          `}
         >
           {icon}
         </div>
-        <CardTitle className="text-sm font-medium">{title}</CardTitle>
+        <CardTitle className="text-lg font-medium" style={{ color: "#282c32" }}>
+          {title}
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <div className="text-2xl font-bold">

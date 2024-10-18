@@ -1,12 +1,8 @@
 import { Card } from "@/components/ui/card";
 import React from "react";
-import {
-  FaInstagram,
-  FaTiktok,
-  FaYoutube,
-  FaTwitter,
-  FaFacebook,
-} from "react-icons/fa";
+import { FaYoutube, FaFacebook } from "react-icons/fa";
+import { AiFillInstagram, AiFillTikTok } from "react-icons/ai";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 interface SocialPlatform {
   name: string;
@@ -16,12 +12,12 @@ interface SocialPlatform {
 }
 
 const socialPlatforms: SocialPlatform[] = [
-  { name: "Instagram", icon: FaInstagram, connected: false },
-  { name: "TikTok", icon: FaTiktok, connected: false },
+  { name: "Instagram", icon: AiFillInstagram, connected: false },
+  { name: "TikTok", icon: AiFillTikTok, connected: false },
   { name: "Youtube", icon: FaYoutube, connected: false },
   {
     name: "X (formerly Twitter)",
-    icon: FaTwitter,
+    icon: FaSquareXTwitter,
     connected: true,
     username: "creator@X.com",
   },
@@ -45,8 +41,11 @@ const SocialAccounts = () => {
               className="flex items-center justify-between p-3 border rounded-lg"
             >
               <div className="flex items-center">
-                <div className="bg-gray-100 p-2 rounded-lg mr-3">
-                  <platform.icon className="w-6 h-6 text-gray-700" />
+                <div className=" p-2 rounded-lg mr-3">
+                  <platform.icon
+                    className="w-10 h-10"
+                    style={{ color: "#143701" }}
+                  />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-800">
@@ -60,8 +59,8 @@ const SocialAccounts = () => {
               <button
                 className={`px-3 py-1 rounded-full text-sm font-medium ${
                   platform.connected
-                    ? "text-gray-600 hover:bg-gray-100"
-                    : "text-green-600 bg-green-50 hover:bg-green-100"
+                    ? "text-gray-400 hover:bg-gray-100"
+                    : "text-green-500  hover:bg-green-100"
                 }`}
               >
                 {platform.connected ? "Disconnect" : "Connect"}
