@@ -15,7 +15,7 @@ export function ActionCard({
 }: ActionCardProps) {
   return (
     <Card
-      className={`p-4 w-full transition-all duration-300 hover:shadow-lg ${
+      className={`p-4 w-full transition-all duration-300 hover:shadow-lg cursor-pointer ${
         isSelected ? "bg-green-500 text-white" : "hover:bg-gray-50"
       }`}
       onClick={() => onSelect(title)}

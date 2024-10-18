@@ -32,7 +32,9 @@ const socialPlatforms: SocialPlatform[] = [
 const SocialAccounts = () => {
   return (
     <>
-      <h1 className="text-lg md:text-2xl text-black mb-5">Social Accounts</h1>
+      <h1 className="text-lg md:text-3xl text-[#5F6062] font-bold mb-5">
+        Social Accounts
+      </h1>
       <Card className="mb-20 flex p-4">
         <div className="bg-white p-4 w-full space-y-6">
           {socialPlatforms.map((platform) => (
