@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div>
-      <h1>Joel Angel</h1>
+      <h1 className="font-rocGrotesk">Joel Angel</h1>
     </div>
   );
 }
