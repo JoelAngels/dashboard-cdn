@@ -1,31 +1,4 @@
 "use client";
-// import Link from "next/link";
-// import {
-//   Activity,
-//   ArrowUpRight,
-//   CreditCard,
-//   DollarSign,
-//   Users,
-// } from "lucide-react";
-
-// import { Button } from "@/components/ui/button";
-// import {
-//   Card,
-//   CardContent,
-//   CardDescription,
-//   CardHeader,
-//   CardTitle,
-// } from "@/components/ui/card";
-// import {
-//   DropdownMenu,
-//   DropdownMenuContent,
-//   DropdownMenuItem,
-//   DropdownMenuLabel,
-//   DropdownMenuSeparator,
-//   DropdownMenuTrigger,
-// } from "@/components/ui/dropdown-menu";
-// import { Input } from "@/components/ui/input";
-// import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Ticket, Mail, FileText, Link } from "lucide-react";
 import { ActionCard } from "../components/ActionCard";
 import { useState } from "react";
@@ -41,7 +14,7 @@ export default function Cardss() {
   };
   return (
     <div className="flex w-full flex-col">
-      <main className="flex flex-col gap-4 p-4 md:gap-8">
+      <main className="flex flex-col gap-4 p-2 md:gap-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           <ActionCard
             title="Set up your link in bio"
