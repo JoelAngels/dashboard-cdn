@@ -25,24 +25,24 @@ const socialPlatforms: SocialPlatform[] = [
     name: "Facebook",
     icon: FaFacebook,
     connected: true,
-    username: "creator@facebook.com",
+    username: "creator@x.com",
   },
 ];
 
 const SocialAccounts = () => {
   return (
     <>
-      <h1 className="text-lg md:text-3xl text-[#5F6062] font-bold mb-5">
+      <h1 className="ml-10 text-xl md:ml-0  md:text-3xl text-[#5F6062] font-bold mb-5">
         Social Accounts
       </h1>
-      <Card className="mb-20 flex p-4">
+      <Card className="mb-20 flex p-4 max-w-[350px] md:max-w-full mx-auto">
         <div className="bg-white p-4 w-full space-y-6">
           {socialPlatforms.map((platform) => (
             <div
               key={platform.name}
               className="flex items-center justify-between p-3 border rounded-lg"
             >
-              <div className="flex items-center">
+              <div className="flex items-center flex-grow">
                 <div className=" p-2 rounded-lg mr-3">
                   <platform.icon
                     className="w-10 h-10"
@@ -59,9 +59,9 @@ const SocialAccounts = () => {
                 </div>
               </div>
               <button
-                className={`px-3 py-1 rounded-full text-sm font-medium ${
+                className={`hidden md:block px-3 py-1 rounded-full text-sm font-medium ${
                   platform.connected
-                    ? "text-gray-400 hover:bg-gray-100"
+                    ? "text-gray-400  hover:bg-gray-100"
                     : "text-green-500  hover:bg-green-100"
                 }`}
               >
